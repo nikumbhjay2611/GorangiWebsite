@@ -265,6 +265,20 @@
     }
   }
 
+  @keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide {
+  animation: slide 20s linear infinite;
+}
+
+
   .cta-button {
     background: linear-gradient(90deg, #000000 0%, #333333 100%);
     padding: 0.875rem 2rem;

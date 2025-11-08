@@ -45,9 +45,9 @@ export default function Clients() {
   ];
 
   return (
-    <div className="min-h-screen overflow-hidden pt-20">
+    <div className="min-h-screen overflow-hidden pt-12">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden px-4 py-20">
+      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden px-4 py-12">
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-80 h-80 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur-3xl opacity-20 animate-pulse-slow"></div>
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
@@ -63,12 +63,12 @@ export default function Clients() {
       {/* Clients Grid */}
       <section className="relative py-32 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16 text-center animate-slide-in-up">
-            <h2 className="text-4xl font-bold mb-2 gradient-text">Our Clients</h2>
-            <p className="text-purple-300">Leading companies across various industries</p>
+          <div className="mb-20 text-center animate-slide-in-up">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 gradient-text tracking-tight">Our Clients</h2>
+            <p className="text-xl sm:text-2xl text-purple-300">Leading companies across various industries</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {clients.map((client, i) => (
               <div
                 key={i}
@@ -78,11 +78,11 @@ export default function Clients() {
                 <div className="glow-border glass-effect h-32 rounded-2xl flex flex-col items-center justify-center hover:glow-border transition-all duration-300 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-blue-600 opacity-0 group-hover:opacity-10 transition-opacity"></div>
                   <div className="relative z-10 text-center">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                      <span className="text-white font-bold text-xs">{client.initials}</span>
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                      <span className="text-white font-bold text-base">{client.initials}</span>
                     </div>
-                    <p className="text-sm font-medium text-white">{client.name}</p>
-                    <p className="text-xs text-purple-400 mt-1">{client.industry}</p>
+                    <p className="text-base sm:text-lg font-medium text-white">{client.name}</p>
+                    <p className="text-sm text-purple-400 mt-2">{client.industry}</p>
                   </div>
                 </div>
               </div>

@@ -9,9 +9,9 @@ export default function NavBar() {
 
   const navItems = [
     { label: "Home", href: "/" },
-    { label: "Products", href: "/products" },
-    { label: "Clients", href: "/clients" },
-    { label: "About", href: "/about" },
+    { label: "Services", href: "/products" },
+    // { label: "Clients", href: "/clients" },
+    { label: "About Us", href: "/about" },
   ];
 
   // 🕒 Auto-hide navbar after 5s of inactivity

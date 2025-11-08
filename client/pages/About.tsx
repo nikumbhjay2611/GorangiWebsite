@@ -2,131 +2,131 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Target, Award, Users } from "lucide-react";
 
 const aboutImg = new URL("../assets/aboutus.jpg", import.meta.url).href;
-const laptopBG = new URL("../assets/andras-vas-Bd7gNnWJBkU-unsplash.jpg", import.meta.url).href;
-const goPngLogo = new URL("../assets/", import.meta.url).href;
 
 export default function About() {
   const values = [
     {
       icon: Target,
       title: "Our Mission",
-      description: "To provide enterprise-grade hardware solutions that empower businesses to achieve their goals with cutting-edge technology.",
+      description:
+        "To provide enterprise-grade hardware solutions that empower businesses to achieve their goals with cutting-edge technology.",
       gradient: "from-purple-500 to-pink-500",
     },
     {
       icon: Award,
       title: "Our Vision",
-      description: "To be the most trusted partner for corporate hardware gifting, known for quality, reliability, and exceptional customer service.",
+      description:
+        "To be the most trusted partner for corporate hardware gifting, known for quality, reliability, and exceptional customer service.",
       gradient: "from-blue-500 to-purple-500",
     },
     {
       icon: Users,
       title: "Our Values",
-      description: "We believe in integrity, innovation, and putting our customers first in everything we do.",
+      description:
+        "We believe in integrity, innovation, and putting our customers first in everything we do.",
       gradient: "from-pink-500 to-orange-500",
     },
   ];
 
   return (
-    <div className="min-h-screen overflow-hidden pt-20">
-      {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden px-4 py-20">
+    <div className="min-h-screen overflow-hidden pt-20 sm:pt-24">
+      {/* HERO SECTION */}
+      <section className="relative flex flex-col items-center justify-center text-center px-6 py-20 sm:py-28">
+        <div className="max-w-5xl mx-auto space-y-6">
+          {/* Title */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold gradient-text tracking-tight leading-tight">
+            About Us
+          </h1>
 
-        <div className="max-w-4xl mx-auto text-center relative z-10 px-4">
-          <div className="space-y-3">
-            {/* Title (line 1) */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold gradient-text">About Us</h1>
+          {/* Subtitle */}
+          <h2 className="text-xl sm:text-2xl md:text-3xl text-white/90 font-medium leading-relaxed">
+            Learn about our mission, vision, and the values that drive us forward.
+          </h2>
 
-            {/* Subtitle (line 2) */}
-            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white/95">
-              Learn about our mission, vision, and the values that drive us forward.
-            </h2>
+          {/* Description */}
+          <p className="text-base sm:text-lg md:text-xl text-purple-200 leading-relaxed max-w-3xl mx-auto">
+            We build enterprise hardware solutions for modern teams — crafted
+            with quality, backed by innovation, and supported by people who care.
+          </p>
 
-            {/* Sub-subtitle (line 3) */}
-            <p className="text-sm sm:text-base md:text-lg text-purple-200 max-w-3xl mx-auto">
-              We build enterprise hardware solutions for modern teams — crafted with quality and backed by support.
-            </p>
-          </div>
-
-          {/* Image below the text (reduced size, responsive) */}
-          <div className="mt-6 flex justify-center">
-            <img src={aboutImg} alt="About us - Gorangi team and workspace" className="w-full max-w-lg rounded-2xl shadow-2xl object-cover" />
+          {/* Image */}
+          <div className="mt-10 flex justify-center">
+            <img
+              src={aboutImg}
+              alt="About Gorangi - Team at work"
+              className="w-full max-w-3xl rounded-2xl shadow-2xl object-cover border border-white/10"
+            />
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="relative py-32 px-4">
+      {/* VALUES SECTION */}
+      <section className="relative py-28 px-6 bg-black/40 backdrop-blur-lg border-t border-white/10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <h2 className="text-center text-4xl sm:text-5xl font-bold text-white mb-16">
+            What Drives Us
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
+                <div
+                  key={index}
+                  className="group relative bg-white/5 border border-white/10 rounded-2xl p-10 text-center backdrop-blur-md hover:bg-white/10 transition-all duration-300"
+                >
                   <div
-                    key={index}
-                    className="group cursor-pointer animate-slide-in-up"
-                    style={{ animationDelay: `${index * 100}ms` }}
+                    className={`inline-flex items-center justify-center p-4 rounded-full bg-gradient-to-br ${value.gradient} mb-6`}
                   >
-                    <div className="glow-border glass-effect p-8 h-full rounded-2xl relative overflow-hidden transition-all duration-300 flex flex-col items-center text-center">                      {aboutImg && (
-                        <div
-                          className="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-20 transition-opacity duration-300"
-                          style={{ backgroundImage: `url(${aboutImg})` }}
-                          aria-hidden
-                        />
-                      )}
-
-                      <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-
-                      <div className="relative z-10 w-full">
-                        <div className={`inline-flex items-center justify-center p-3 rounded-full bg-gradient-to-br ${value.gradient} mb-6 w-12 h-12 mx-auto`}>
-                          <Icon className="w-6 h-6 text-white" />
-                        </div>
-
-                        <h3 className="text-2xl font-bold text-white mb-4">
-                          {value.title}
-                        </h3>
-                        <p className="text-purple-300">
-                          {value.description}
-                        </p>
-                      </div>
-                    </div>
+                    <Icon className="w-7 h-7 text-white" />
                   </div>
-                );
+                  <h3 className="text-2xl font-semibold text-white mb-4">
+                    {value.title}
+                  </h3>
+                  <p className="text-purple-300 text-base leading-relaxed">
+                    {value.description}
+                  </p>
+
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl`}
+                  />
+                </div>
+              );
             })}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative py-32 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="glow-border glass-effect rounded-2xl p-12 md:p-16 text-center animate-slide-in-up">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="gradient-text">Ready to Partner with Us?</span>
-            </h2>
-            <p className="text-purple-300 text-lg mb-8 max-w-2xl mx-auto">
-              Let's discuss how Gorangi can help your business thrive with premium hardware solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/products"
-                className="cta-button flex items-center justify-center gap-2 group"
-              >
-                View Products
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                to="/contact"
-                className="secondary-cta flex items-center justify-center gap-2"
-              >
-                Get in Touch
-              </Link>
-            </div>
+      {/* CTA SECTION */}
+      <section className="relative py-28 px-6">
+        <div className="max-w-5xl mx-auto text-center glass-effect glow-border rounded-2xl p-10 sm:p-16">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            <span className="gradient-text">Ready to Partner with Us?</span>
+          </h2>
+          <p className="text-purple-300 text-lg mb-10 max-w-2xl mx-auto">
+            Let's discuss how Gorangi can help your business thrive with premium
+            hardware solutions.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/products"
+              className="cta-button flex items-center justify-center gap-2 group"
+            >
+              View Products
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link
+              to="/contact"
+              className="secondary-cta flex items-center justify-center gap-2"
+            >
+              Get in Touch
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
+      {/* FOOTER */}
       <footer className="relative border-t border-purple-500/10 py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -137,39 +137,54 @@ export default function About() {
                 </div>
                 <span className="font-semibold text-white">Gorangi</span>
               </div>
-              <p className="text-purple-400 text-sm">Premium hardware solutions for modern teams.</p>
+              <p className="text-purple-400 text-sm">
+                Premium hardware solutions for modern teams.
+              </p>
             </div>
+
             <div>
               <h3 className="font-semibold text-white mb-4">Products</h3>
               <ul className="space-y-2">
                 {["Laptops", "Desktops", "Bundles"].map((item) => (
-                  <li key={item} className="text-purple-400 hover:text-purple-200 transition-colors text-sm cursor-pointer">
+                  <li
+                    key={item}
+                    className="text-purple-400 hover:text-purple-200 transition-colors text-sm cursor-pointer"
+                  >
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
+
             <div>
               <h3 className="font-semibold text-white mb-4">Company</h3>
               <ul className="space-y-2">
                 {["About", "Blog", "Careers"].map((item) => (
-                  <li key={item} className="text-purple-400 hover:text-purple-200 transition-colors text-sm cursor-pointer">
+                  <li
+                    key={item}
+                    className="text-purple-400 hover:text-purple-200 transition-colors text-sm cursor-pointer"
+                  >
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
+
             <div>
               <h3 className="font-semibold text-white mb-4">Support</h3>
               <ul className="space-y-2">
                 {["Docs", "Contact", "FAQ"].map((item) => (
-                  <li key={item} className="text-purple-400 hover:text-purple-200 transition-colors text-sm cursor-pointer">
+                  <li
+                    key={item}
+                    className="text-purple-400 hover:text-purple-200 transition-colors text-sm cursor-pointer"
+                  >
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
           </div>
+
           <div className="border-t border-purple-500/10 pt-8">
             <p className="text-center text-purple-400 text-sm">
               © 2025 Gorangi. All rights reserved.
