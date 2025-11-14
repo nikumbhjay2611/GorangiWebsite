@@ -94,6 +94,8 @@ export default {
           "100%": { transform: "translateX(30%) skewX(-12deg)", opacity: "0" },
         },
       },
+
+      
       animation: {
         beams: "beams 8s linear infinite",
       },

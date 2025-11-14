@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Footer from "./Footer";
+
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -95,9 +97,13 @@ export default function Products() {
 
   return (
     <div className="min-h-screen overflow-hidden pt-12">
+
+      {/* CTA BUTTON FIX (INLINE TAILWIND) */}
+      {/* NEW class: flex items-center gap-2 + group-hover translate without size shift */}
+
       {/* Section 1: Hero */}
       <section className="relative min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-24">
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-80 h-80 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur-3xl opacity-20 animate-pulse-slow"></div>
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-80 h-80 text-gradient rounded-full blur-3xl opacity-20 animate-pulse-slow"></div>
 
         <div className="max-w-4xl mx-auto relative z-10">
           <motion.h1
@@ -108,6 +114,7 @@ export default function Products() {
           >
             Comprehensive IT Solutions for Modern Enterprises
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -115,8 +122,7 @@ export default function Products() {
             className="text-lg md:text-xl text-purple-200 mb-10"
           >
             Explore Gorangi’s full suite of products and services — designed to
-            enhance efficiency, security, and innovation across your business
-            operations.
+            enhance efficiency, security, and innovation across your business operations.
           </motion.p>
 
           <motion.div
@@ -125,13 +131,20 @@ export default function Products() {
             transition={{ duration: 0.9 }}
             className="flex flex-wrap gap-4 justify-center"
           >
-            <Link to="#offerings" className="cta-button group">
+            <Link
+              to="#offerings"
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white bg-gradient-to-r from-purple-600 to-indigo-600 font-semibold transition-all"
+            >
               Explore Categories
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Link>
-            <Link to="/contact" className="cta-button group">
+
+            <Link
+              to="/contact"
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white bg-gradient-to-r from-indigo-600 to-purple-600 font-semibold transition-all"
+            >
               Talk to an Expert
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </motion.div>
         </div>
@@ -183,10 +196,10 @@ export default function Products() {
 
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center text-sm font-semibold text-purple-200 hover:text-white transition-colors"
+                    className="group inline-flex items-center gap-2 text-sm font-semibold text-purple-200 hover:text-white transition-all"
                   >
                     Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
               </motion.div>
@@ -195,7 +208,7 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Section 3: Detailed Service Blocks */}
+      {/* Section 3: Service Detail Blocks */}
       <section className="relative py-24 px-6">
         <div className="max-w-6xl mx-auto space-y-24">
           {serviceDetails.map((service, index) => {
@@ -229,7 +242,7 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Section 4: Consulting */}
+      {/* Section 4: Consulting CTA */}
       <section className="relative py-24 px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -243,18 +256,20 @@ export default function Products() {
           <p className="text-purple-200 text-lg mb-10">
             Beyond products, Gorangi’s consulting team helps organizations align
             IT investments with business goals. We offer technology assessments,
-            digital transformation planning, and infrastructure scalability
-            roadmaps — ensuring your tech ecosystem evolves as your business
-            grows.
+            digital transformation planning, and infrastructure scalability roadmaps.
           </p>
-          <Link to="/contact" className="cta-button group">
+
+          <Link
+            to="/contact"
+            className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white bg-gradient-to-r from-purple-600 to-indigo-600 font-semibold transition-all"
+          >
             Consult Our Experts
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </Link>
         </motion.div>
       </section>
 
-      {/* Section 5: Technology Partners */}
+      {/* Section 5: Logo Rail Animation */}
       <section className="relative py-24 px-6 text-center overflow-hidden">
         <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
           Trusted by Global Technology Leaders
@@ -265,7 +280,13 @@ export default function Products() {
         </p>
 
         <div className="overflow-hidden">
-          <div className="flex gap-16 animate-logo-slide min-w-max">
+          {/* LOGO RAIL */}
+          <div
+            className="flex gap-16 min-w-max animate-[slideLeftToRight_15s_linear_infinite]"
+            style={{
+              animation: "slideLeftToRight 15s linear infinite",
+            }}
+          >
             {partnerLogos.concat(partnerLogos).map((logo, i) => (
               <img
                 key={i}
@@ -278,7 +299,7 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Section 6: Final CTA Footer */}
+      {/* Section 6: Final CTA */}
       <section className="relative py-32 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="glow-border glass-effect rounded-2xl p-12 md:p-16 text-center animate-slide-in-up">
@@ -291,20 +312,39 @@ export default function Products() {
               Connect with Gorangi to explore tailored IT solutions that power
               your business.
             </p>
+
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/contact" className="cta-button group">
+              <Link
+                to="/contact"
+                className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white bg-gradient-to-r from-purple-600 to-indigo-600 font-semibold transition-all"
+              >
                 Get in Touch
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
-              <Link to="/contact" className="cta-button group">
+
+              <Link
+                to="/contact"
+                className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white bg-gradient-to-r from-purple-600 to-indigo-600 font-semibold transition-all"
+              >
                 Request a Quote
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
-              <Link to="/contact" className="cta-button group">
+
+              <Link
+                to="/contact"
+                className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white bg-gradient-to-r from-purple-600 to-indigo-600 font-semibold transition-all"
+              >
                 Schedule a Demo
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
+
+

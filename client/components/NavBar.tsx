@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logo from "../assets/Go PNG Logo.png";
+const gorangilogo = new URL("../assets/Gorangi Logo Nov 2025.png", import.meta.url).href;
+
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,9 +72,9 @@ export default function NavBar() {
         <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-3 group">
           <div className="flex items-center justify-center">
             <img
-              src={logo}
+              src={gorangilogo}
               alt="Gorangi Logo"
-              className="w-9 h-9 md:w-10 md:h-10 object-contain transition-transform duration-300 group-hover:scale-110"
+              className="w-9 h-9 md:w-10  md:h-10 object-contain transition-transform duration-300 group-hover:scale-110"
             />
           </div>
           <span className="hidden md:block font-semibold text-white text-lg leading-tight">

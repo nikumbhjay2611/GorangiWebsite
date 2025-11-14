@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Target, Award, Users } from "lucide-react";
-
+import Footer from "./Footer";
 const aboutImg = new URL("../assets/aboutus.jpg", import.meta.url).href;
 
 export default function About() {
@@ -127,71 +127,7 @@ export default function About() {
       </section>
 
       {/* FOOTER */}
-      <footer className="relative border-t border-purple-500/10 py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">HW</span>
-                </div>
-                <span className="font-semibold text-white">Gorangi</span>
-              </div>
-              <p className="text-purple-400 text-sm">
-                Premium hardware solutions for modern teams.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-white mb-4">Products</h3>
-              <ul className="space-y-2">
-                {["Laptops", "Desktops", "Bundles"].map((item) => (
-                  <li
-                    key={item}
-                    className="text-purple-400 hover:text-purple-200 transition-colors text-sm cursor-pointer"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-white mb-4">Company</h3>
-              <ul className="space-y-2">
-                {["About", "Blog", "Careers"].map((item) => (
-                  <li
-                    key={item}
-                    className="text-purple-400 hover:text-purple-200 transition-colors text-sm cursor-pointer"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-white mb-4">Support</h3>
-              <ul className="space-y-2">
-                {["Docs", "Contact", "FAQ"].map((item) => (
-                  <li
-                    key={item}
-                    className="text-purple-400 hover:text-purple-200 transition-colors text-sm cursor-pointer"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-purple-500/10 pt-8">
-            <p className="text-center text-purple-400 text-sm">
-              © 2025 Gorangi. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+     <Footer />
     </div>
   );
 }

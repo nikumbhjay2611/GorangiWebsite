@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import Footer from "./Footer";
+
 
 const heroVideo = new URL(
   "../assets/3129671-uhd_3840_2160_30fps.mp4",
@@ -32,10 +34,10 @@ export default function Index() {
         <div className="absolute inset-0 bg-black/60" aria-hidden />
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 text-white tracking-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]">
-            Empowering Businesses with{" "}
-            <span className="block bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-              Smarter IT Solutions
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-blue-500 tracking-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)] ">
+            
+            <span className="block text-gradient text-transparent bg-clip-text">
+              Empowering Businesses with{" "} Smarter IT Solutions
             </span>
           </h1>
 
@@ -226,7 +228,7 @@ export default function Index() {
       </section>
 
       {/* FOOTER */}
-      <footer className="relative border-t border-purple-500/10 py-16 px-4">
+      {/* <footer className="relative border-t border-purple-500/10 py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div>
@@ -290,7 +292,8 @@ export default function Index() {
             </p>
           </div>
         </div>
-      </footer>
+      </footer> */}
+      <Footer />
     </div>
   );
 }

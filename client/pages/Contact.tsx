@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import Footer from "./Footer";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -249,7 +250,7 @@ export default function Contact() {
       </section>
 
       {/* Footer */}
-      <footer className="relative border-t border-purple-500/10 py-16 px-4">
+      {/* <footer className="relative border-t border-purple-500/10 py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div>
@@ -298,7 +299,8 @@ export default function Contact() {
             </p>
           </div>
         </div>
-      </footer>
+      </footer> */}
+      <Footer />
     </div>
   );
 }
