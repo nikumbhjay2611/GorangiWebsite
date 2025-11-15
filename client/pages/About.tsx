@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Target, Award, Users } from "lucide-react";
 import Footer from "./Footer";
-const aboutImg = new URL("../assets/aboutus.jpg", import.meta.url).href;
+import aboutImg from "../assets/aboutus.jpg";
 
 export default function About() {
   const values = [
