@@ -113,6 +113,8 @@ export default function About() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/products"
+                           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+
               className="cta-button flex items-center justify-center gap-2 group"
             >
               View Products
@@ -120,6 +122,8 @@ export default function About() {
             </Link>
             <Link
               to="/contact"
+                           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+
               className="secondary-cta flex items-center justify-center gap-2"
             >
               Get in Touch

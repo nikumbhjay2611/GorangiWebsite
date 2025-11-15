@@ -55,7 +55,8 @@ export default function Index() {
  className="cta-button">
               Explore Solutions
             </Link>
-            <Link to="/contact"                   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            <Link to="/contact"                  
+             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
  className="secondary-cta">
               Contact Sales
             </Link>

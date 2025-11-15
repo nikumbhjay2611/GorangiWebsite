@@ -263,15 +263,7 @@ export default function Products() {
             digital transformation planning, and infrastructure scalability roadmaps.
           </p>
 
-          <Link
-            to="/contact"
-                         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-
-            className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white bg-gradient-to-r from-purple-600 to-indigo-600 font-semibold transition-all"
-          >
-            Consult Our Experts
-            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </Link>
+          
         </motion.div>
       </section>
 

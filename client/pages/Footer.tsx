@@ -6,7 +6,7 @@ const brochurePDF = new URL("../assets/brochure.pdf", import.meta.url).href;
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-purple-500/10 py-16 px-6 bg-black">
+    <footer className="relative border-t border-blue-500/10 py-16 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
 
         {/* Centered Grid */}
@@ -31,7 +31,7 @@ export default function Footer() {
             <div className="flex justify-center gap-5 mt-4">
               <a
                 href="mailto:marketing@gorangi.com"
-                className="text-purple-400 hover:text-purple-300 transition-colors"
+                className="text-blue-400 hover:text-blue-300 transition-colors"
                 aria-label="Email"
               >
                 <Mail size={22} />
@@ -41,7 +41,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/gorangi/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-purple-400 hover:text-purple-300 transition-colors"
+                className="text-blue-400 hover:text-blue-300 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={22} />
@@ -57,7 +57,7 @@ export default function Footer() {
                 <Link
                   to="/"
                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                  className="text-purple-400 hover:text-purple-200 transition-colors text-sm"
+                  className="text-blue-400 hover:text-blue-200 transition-colors text-sm"
                 >
                   Home
                 </Link>
@@ -66,7 +66,7 @@ export default function Footer() {
                 <Link
                   to="/products"
                   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                  className="text-purple-400 hover:text-purple-200 transition-colors text-sm"
+                  className="text-blue-400 hover:text-blue-200 transition-colors text-sm"
                 >
                   Services
                 </Link>
@@ -75,7 +75,7 @@ export default function Footer() {
                 <Link
                   to="/about"
                   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                  className="text-purple-400 hover:text-purple-200 transition-colors text-sm"
+                  className="text-blue-400 hover:text-blue-200 transition-colors text-sm"
                 >
                   About Us
                 </Link>
@@ -93,7 +93,7 @@ export default function Footer() {
                 <a
                   href={brochurePDF}
                   download
-                  className="text-purple-400 hover:text-purple-200 transition-colors text-sm cursor-pointer"
+                  className="text-blue-400 hover:text-blue-200 transition-colors text-sm cursor-pointer"
                 >
                   Docs
                 </a>
@@ -104,7 +104,7 @@ export default function Footer() {
                 <Link
                   to="/contact"
                   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                  className="text-purple-400 hover:text-purple-200 transition-colors text-sm cursor-pointer"
+                  className="text-blue-400 hover:text-blue-200 transition-colors text-sm cursor-pointer"
                 >
                   Contact
                 </Link>
@@ -114,7 +114,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/contact#faq"
-                  className="text-purple-400 hover:text-purple-200 transition-colors text-sm cursor-pointer"
+                  className="text-blue-400 hover:text-blue-200 transition-colors text-sm cursor-pointer"
                 >
                   FAQ
                 </Link>
@@ -125,8 +125,8 @@ export default function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="border-t border-purple-500/10 pt-8">
-          <p className="text-center text-purple-400 text-sm tracking-wide">
+        <div className="border-t border-blue-500/10 pt-8">
+          <p className="text-center text-blue-400 text-sm tracking-wide">
             © 2025 Gorangi. All rights reserved.
           </p>
         </div>
