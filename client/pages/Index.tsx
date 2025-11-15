@@ -36,7 +36,7 @@ export default function Index() {
         <div className="absolute inset-0 bg-black/60" aria-hidden />
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-blue-500 tracking-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)] ">
+          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-blue-500 tracking-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)] ">
             
             <span className="block text-gradient text-transparent bg-clip-text">
               Empowering Businesses with{" "} Smarter IT Solutions
