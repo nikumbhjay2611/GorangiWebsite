@@ -3,7 +3,7 @@ import Footer from "./Footer";
 
 const logos = import.meta.glob('../assets/partnerlogosforwebsite/*', { eager: true });
 
-const partnerLogos = Object.values(logos).map((mod) => mod.default);
+const partnerLogos = Object.values(logos).map((module) => (module as { default: string }).default);
 
 import { Link } from "react-router-dom";
 import {
