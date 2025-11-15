@@ -50,10 +50,13 @@ export default function Index() {
           </h2>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/products" className="cta-button">
+            <Link to="/products"                  
+             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+ className="cta-button">
               Explore Solutions
             </Link>
-            <Link to="/contact" className="secondary-cta">
+            <Link to="/contact"                   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+ className="secondary-cta">
               Contact Sales
             </Link>
           </div>
@@ -217,7 +220,9 @@ export default function Index() {
 
     <div className="flex flex-col sm:flex-row gap-4 justify-center">
       
-      <Link to="/contact" className="cta-button">
+      <Link to="/contact" className="cta-button"
+                        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+>
         Get in Touch
       </Link>
 

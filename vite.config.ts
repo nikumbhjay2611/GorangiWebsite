@@ -9,9 +9,12 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
     fs: {
-      allow: ["./client", "./shared"],
-      deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
-    },
+  allow: [
+    ".",          // allow project root (fixes your error)
+    "./client",
+    "./shared"
+  ],
+}
   },
   build: {
     outDir: "dist/spa",

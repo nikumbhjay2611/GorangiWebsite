@@ -53,6 +53,8 @@ export default function About() {
           <div className="mt-10 flex justify-center">
             <img
               src={aboutImg}
+              loading="eager"
+              fetchPriority="high"
               alt="About Gorangi - Team at work"
               className="w-full max-w-3xl rounded-2xl shadow-2xl object-cover border border-white/10"
             />

@@ -1,6 +1,10 @@
 import { useState } from "react";
 import Footer from "./Footer";
 
+const logos = import.meta.glob('../assets/partnerlogosforwebsite/*', { eager: true });
+
+const partnerLogos = Object.values(logos).map((mod) => mod.default);
+
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -86,17 +90,10 @@ export default function Products() {
     },
   ];
 
-  const partnerLogos = [
-    "https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/3/3a/HP_logo_2012.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/0/0b/Lenovo_logo_2015.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/1/19/Cisco_logo.svg",
-  ];
+ 
 
   return (
-    <div className="min-h-screen overflow-hidden pt-12">
+    <div className="min-h-screen overflow-hidden pt-24">
 
       {/* CTA BUTTON FIX (INLINE TAILWIND) */}
       {/* NEW class: flex items-center gap-2 + group-hover translate without size shift */}
@@ -125,28 +122,7 @@ export default function Products() {
             enhance efficiency, security, and innovation across your business operations.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-            className="flex flex-wrap gap-4 justify-center"
-          >
-            <Link
-              to="#offerings"
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white bg-gradient-to-r from-purple-600 to-indigo-600 font-semibold transition-all"
-            >
-              Explore Categories
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Link>
-
-            <Link
-              to="/contact"
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white bg-gradient-to-r from-indigo-600 to-purple-600 font-semibold transition-all"
-            >
-              Talk to an Expert
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </motion.div>
+          
         </div>
       </section>
 
@@ -157,7 +133,7 @@ export default function Products() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-bold mb-6 gradient-text"
+            className="text-4xl md:text-5xl font-bold mb-6 gradient-text leading-normal md:leading-snug"
           >
             Our Core Offerings
           </motion.h2>
@@ -194,13 +170,7 @@ export default function Products() {
                     {item.description}
                   </p>
 
-                  <Link
-                    to="/contact"
-                    className="group inline-flex items-center gap-2 text-sm font-semibold text-purple-200 hover:text-white transition-all"
-                  >
-                    Learn More
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
+                 
                 </div>
               </motion.div>
             );
@@ -209,7 +179,7 @@ export default function Products() {
       </section>
 
       {/* Section 3: Service Detail Blocks */}
-      <section className="relative py-24 px-6">
+      {/* <section className="relative py-24 px-6">
         <div className="max-w-6xl mx-auto space-y-24">
           {serviceDetails.map((service, index) => {
             const Icon = service.icon;
@@ -240,7 +210,41 @@ export default function Products() {
             );
           })}
         </div>
-      </section>
+      </section> */}
+
+       {/* Section 5: Logo Rail Animation */}
+      <section className="relative py-24 px-6 text-center">
+  <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text leading-normal md:leading-snug">
+    Trusted by Global Technology Leaders
+  </h2>
+
+  <p className="text-purple-200 text-lg mb-12">
+    Our partnerships with world-class brands ensure quality, reliability,
+    and innovation in every solution we deliver.
+  </p>
+
+  {/* Responsive Logo Grid */}
+  <div className="grid 
+      grid-cols-2 
+      sm:grid-cols-3 
+      md:grid-cols-4 
+      lg:grid-cols-5 
+      xl:grid-cols-6 
+      gap-10 
+      place-items-center px-6">
+
+    {partnerLogos.map((logo, index) => (
+      <img
+        key={index}
+        src={logo}
+        alt="Client Logo"
+        className="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition"
+      />
+    ))}
+
+  </div>
+</section>
+
 
       {/* Section 4: Consulting CTA */}
       <section className="relative py-24 px-6 text-center">
@@ -261,6 +265,8 @@ export default function Products() {
 
           <Link
             to="/contact"
+                         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+
             className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white bg-gradient-to-r from-purple-600 to-indigo-600 font-semibold transition-all"
           >
             Consult Our Experts
@@ -269,35 +275,7 @@ export default function Products() {
         </motion.div>
       </section>
 
-      {/* Section 5: Logo Rail Animation */}
-      <section className="relative py-24 px-6 text-center overflow-hidden">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-          Trusted by Global Technology Leaders
-        </h2>
-        <p className="text-purple-200 text-lg mb-12">
-          Our partnerships with world-class brands ensure quality, reliability,
-          and innovation in every solution we deliver.
-        </p>
-
-        <div className="overflow-hidden">
-          {/* LOGO RAIL */}
-          <div
-            className="flex gap-16 min-w-max animate-[slideLeftToRight_15s_linear_infinite]"
-            style={{
-              animation: "slideLeftToRight 15s linear infinite",
-            }}
-          >
-            {partnerLogos.concat(partnerLogos).map((logo, i) => (
-              <img
-                key={i}
-                src={logo}
-                alt="Partner Logo"
-                className="h-12 opacity-80 hover:opacity-100 transition"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Section 6: Final CTA */}
       <section className="relative py-32 px-6">
@@ -316,27 +294,17 @@ export default function Products() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 to="/contact"
+                             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+
                 className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white bg-gradient-to-r from-purple-600 to-indigo-600 font-semibold transition-all"
               >
                 Get in Touch
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
 
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white bg-gradient-to-r from-purple-600 to-indigo-600 font-semibold transition-all"
-              >
-                Request a Quote
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Link>
+              
 
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white bg-gradient-to-r from-purple-600 to-indigo-600 font-semibold transition-all"
-              >
-                Schedule a Demo
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Link>
+              
             </div>
           </div>
         </div>
