@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Footer from "./Footer";
+const brochurePDF = new URL("../assets/brochure.pdf", import.meta.url).href;
+
 
 
 const heroVideo = new URL(
@@ -19,7 +21,7 @@ export default function Index() {
       {/* HERO SECTION */}
       <section
         id="hero"
-        className="relative min-h-[95vh] flex items-center justify-center overflow-hidden px-4 sm:px-8 md:px-16 pt-24 sm:pt-32"
+        className="relative min-h-[100vh] flex items-center justify-center overflow-hidden px-4 sm:px-8 md:px-16 pt-24 sm:pt-32"
       >
         {/* Background Video */}
         <video
@@ -59,31 +61,23 @@ export default function Index() {
       </section>
 
       {/* WHO WE ARE */}
-      <section className="relative py-24 px-4 border-t border-gray-700/40">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 text-gray-300">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              Who We Are
-            </h2>
-            <p className="text-lg leading-relaxed mb-4">
-              Gorangi is a leading B2B IT products and solutions company based in
-              Bengaluru, India. We specialize in IT hardware, software, and
-              consulting services that enable enterprises to enhance performance
-              and security.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              Gorangi
-            </h2>
-            <p className="text-lg leading-relaxed">
-              By combining global partnerships, technical expertise, and a
-              customer-first approach, Gorangi ensures innovation, strong
-              enterprise support, and technology excellence for every client.
-            </p>
-          </div>
-        </div>
+      <section className="relative py-24 px-6 border-t border-gray-700/40">
+  <div className="max-w-3xl mx-auto text-center text-gray-300">
+    <h2 className="text-3xl md:text-5xl font-bold mb-6 gradient-title">
+      Who We Are
+    </h2>
+
+    <p className="text-lg leading-relaxed">
+      Gorangi is a leading B2B IT products and solutions company based in
+      Bengaluru, India. We specialize in IT hardware, software, and consulting
+      services that enable enterprises to enhance performance and security.
+      By combining global partnerships, technical expertise, and a
+      customer-first approach, Gorangi ensures innovation, strong enterprise
+      support, and technology excellence for every client.
+    </p>
+  </div>
       </section>
+
 
       {/* WHAT WE DELIVER */}
       <section className="relative z-10 bg-black/40 backdrop-blur-lg py-20 px-6 md:px-20">
@@ -161,138 +155,87 @@ export default function Index() {
       </section>
 
       {/* STRATEGIC IT CONSULTING + WHY PARTNER */}
-      <section className="relative py-24 px-4 border-t border-gray-700/40">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 text-gray-300">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              Strategic IT Consulting
-            </h2>
-            <p className="text-lg leading-relaxed mb-4">
-              Our experts help organizations align technology with business
-              goals, ensuring agility, compliance, and scalability.
-            </p>
-            <p className="text-lg leading-relaxed">
-              We focus on creating future-ready infrastructure that supports
-              sustainable growth and digital transformation.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              Why Partner with Gorangi
-            </h2>
-            <p className="text-lg leading-relaxed mb-6">
-              Let’s empower your business with smarter, faster, and more secure
-              IT solutions.
-            </p>
-            <ul className="space-y-3 text-base">
-              <li className="flex items-start gap-2">
-                <Mail className="w-5 h-5 text-purple-400 mt-1" />
-                marketing@gorangi.com
-              </li>
-              <li className="flex items-start gap-2">
-                <Phone className="w-5 h-5 text-purple-400 mt-1" /> +91 7559358660
-              </li>
-              <li className="flex items-start gap-2">
-                <MapPin className="w-5 h-5 text-purple-400 mt-1" />
-                235, 2nd & 3rd Floor, 13th Cross Rd, Indira Nagar II Stage,
-                Bengaluru, Karnataka
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      <section className="relative py-28 px-6 md:px-12 border-t border-gray-700/40">
+  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 text-gray-300">
+    
+    <div className="space-y-6">
+      <h2 className="text-3xl md:text-4xl font-bold text-white">
+        Strategic IT Consulting
+      </h2>
+      <p className="text-lg leading-relaxed">
+        Our experts help organizations align technology with business
+        goals, ensuring agility, compliance, and scalability.
+      </p>
+      <p className="text-lg leading-relaxed">
+        We focus on creating future-ready infrastructure that supports
+        sustainable growth and digital transformation.
+      </p>
+    </div>
+
+    <div className="space-y-6">
+      <h2 className="text-3xl md:text-4xl font-bold text-white">
+        Why Partner with Gorangi
+      </h2>
+      <p className="text-lg leading-relaxed">
+        Let’s empower your business with smarter, faster, and more secure
+        IT solutions.
+      </p>
+
+      <ul className="space-y-4 text-base">
+        <li className="flex items-start gap-3">
+          <Mail className="w-5 h-5 text-blue-400 mt-1" />
+          marketing@gorangi.com
+        </li>
+        <li className="flex items-start gap-3">
+          <Phone className="w-5 h-5 text-blue-400 mt-1" /> 
+          +91 7559358660
+        </li>
+        <li className="flex items-start gap-3">
+          <MapPin className="w-5 h-5 text-blue-400 mt-1" />
+          235, 2nd & 3rd Floor, 13th Cross Rd, Indira Nagar II Stage,
+          Bengaluru, Karnataka
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 
       {/* CTA SECTION */}
       <section className="relative py-24 px-4">
-        <div className="max-w-5xl mx-auto text-center glass-effect glow-border p-12 rounded-2xl">
-          <h2 className="text-4xl font-bold mb-6 text-white">
-            Ready to Transform Your IT Ecosystem?
-          </h2>
-          <p className="text-gray-300 text-lg mb-8">
-            Let’s empower your business with smarter, faster, and more secure IT
-            solutions.
-          </p>
+  <div className="max-w-5xl mx-auto text-center glass-effect glow-border p-12 rounded-2xl">
+    
+    <h2 className="text-4xl font-bold mb-6 text-white">
+      Ready to Transform Your IT Ecosystem?
+    </h2>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact" className="cta-button">
-              Get in Touch
-            </Link>
-            <Link to="/demo" className="secondary-cta">
-              Schedule a Demo
-            </Link>
-            <Link to="/brochure" className="secondary-cta">
-              Download Brochure
-            </Link>
-          </div>
-        </div>
-      </section>
+    <p className="text-gray-300 text-lg mb-8">
+      Let’s empower your business with smarter, faster, and more secure IT
+      solutions.
+    </p>
 
-      {/* FOOTER */}
-      {/* <footer className="relative border-t border-purple-500/10 py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">HW</span>
-                </div>
-                <span className="font-semibold text-white">Gorangi</span>
-              </div>
-              <p className="text-purple-400 text-sm">
-                Premium enterprise hardware solutions for modern teams.
-              </p>
-            </div>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      
+      <Link to="/contact" className="cta-button">
+        Get in Touch
+      </Link>
 
-            <div>
-              <h3 className="font-semibold text-white mb-4">Products</h3>
-              <ul className="space-y-2">
-                {["Laptops", "Desktops", "Bundles"].map((item) => (
-                  <li
-                    key={item}
-                    className="text-purple-400 hover:text-purple-200 transition-colors text-sm cursor-pointer"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+      {/* PDF Import */}
+      <a
+        href={brochurePDF}
+        download="Gorangi-Brochure.pdf"
+        className="secondary-cta"
+      >
+        Download Brochure
+      </a>
+    </div>
 
-            <div>
-              <h3 className="font-semibold text-white mb-4">Company</h3>
-              <ul className="space-y-2">
-                {["About", "Blog", "Careers"].map((item) => (
-                  <li
-                    key={item}
-                    className="text-purple-400 hover:text-purple-200 transition-colors text-sm cursor-pointer"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+  </div>
+     </section>
 
-            <div>
-              <h3 className="font-semibold text-white mb-4">Support</h3>
-              <ul className="space-y-2">
-                {["Docs", "Contact", "FAQ"].map((item) => (
-                  <li
-                    key={item}
-                    className="text-purple-400 hover:text-purple-200 transition-colors text-sm cursor-pointer"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
 
-          <div className="border-t border-purple-500/10 pt-8">
-            <p className="text-center text-purple-400 text-sm">
-              © 2025 Gorangi. All rights reserved. | Built with React + Tailwind
-            </p>
-          </div>
-        </div>
-      </footer> */}
+      
       <Footer />
     </div>
   );

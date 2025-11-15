@@ -77,8 +77,8 @@ export default function NavBar() {
               className="w-9 h-9 md:w-10  md:h-10 object-contain transition-transform duration-300 group-hover:scale-110"
             />
           </div>
-          <span className="hidden md:block font-semibold text-white text-lg leading-tight">
-            Gorangi.
+          <span className=" md:block font-semibold text-white text-lg leading-tight">
+            Gorangi
           </span>
         </Link>
 
